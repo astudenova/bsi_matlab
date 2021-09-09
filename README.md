@@ -1,5 +1,5 @@
 # bsi_matlab
-Functions for computation of Baseline-shift Index (BSI)
+Functions for computation of Baseline-shift index (BSI)
 
 *bsi_pipeline* - is a pipeline for BSI computation
 
