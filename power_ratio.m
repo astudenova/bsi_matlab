@@ -4,8 +4,8 @@ function pow = power_ratio(sp,f,sig_band,noise_band)
 
 % pow = power_ratio(sp,f,sig_band,noise_band)
 
-% This function takes in power spectral density and signal and noise band
-% edges and computed power ratio.
+% This function takes in power spectral density, signal and noise band
+% edges, computes power ratio
 
 % Inputs:
 % sp - spectral power computed with Welches method, a vector
