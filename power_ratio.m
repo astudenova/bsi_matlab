@@ -8,7 +8,7 @@ function pow = power_ratio(sp,f,sig_band,noise_band)
 % edges and computed power ratio.
 
 % Inputs:
-% sp - spectral power computed with Welches method, for instance, a vector
+% sp - spectral power computed with Welches method, a vector
 % or a matrix
 % f - associated frequency vector in Hz
 % sig_band - range of the signal in Hz, a vector of 2 values
