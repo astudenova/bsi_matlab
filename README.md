@@ -15,6 +15,6 @@ Nikulin, V. V., Linkenkaer-Hansen, K., Nolte, G., & Curio, G. (2010).
 Non-zero mean and asymmetry of neuronal oscillations have different implications for evoked responses. Clinical Neurophysiology, 121(2), 186–193. 
 https://doi.org/10.1016/j.clinph.2009.09.028
 
-Nikulin, V. V., Linkenkaer-Hansen, K., Nolte, G., Lemm, S., M?ller, K. R., Ilmoniemi, R. J., & Curio, G. (2007). 
+Nikulin, V. V., Linkenkaer-Hansen, K., Nolte, G., Lemm, S., Müller, K. R., Ilmoniemi, R. J., & Curio, G. (2007). 
 A novel mechanism for evoked responses in the human brain. European Journal of Neuroscience, 25(10), 3146–3154. 
 https://doi.org/10.1111/j.1460-9568.2007.05553.x
