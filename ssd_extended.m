@@ -9,7 +9,7 @@ function [X_ssd, patterns] = ssd_extended(X, alpha_pk, fs, ncomp)
 % X - data matrix to decompose
 % alpha_pk - the central value of band of interest in Hz
 % fs - sampling frequency in Hz
-% numcomp - number SSD components to return
+% numcomp - number of SSD components to return
 
 % Outputs:
 % X_ssd - matrix of SSD components' time courses, timepoints x components
