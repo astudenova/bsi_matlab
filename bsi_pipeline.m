@@ -4,20 +4,20 @@ function [bsi, pow_alpha, pow_lf] = bsi_pipeline(X, alpha_pk, fs, numcomp)
 
 % This function is a pipeline for BSI computation.
 
-% For the operation 4 other functions are needed:
+% For the operation, 4 other functions are needed:
 % ssd - from BBCI Toolbox
 % ssd_extended
 % power_ratio
 % compute_bsi
 
 % Inputs:
-% X - raw data, matrix
+% X - raw data, matrix timepoints x channels
 % alpha_pk - peak frequency in the band of interest in Hz
 % fs - sampling frequency in Hz
-% numcomp - number of components to return from SSD spatial filter
+% numcomp - number of components to return from SSD spatial filtering
 
 % Outputs:
-% bsi - Baseline-shift index,- a measure of correspondence between
+% bsi - Baseline-shift index - a measure of correspondence between
 % amplitude modulation and shifts in lower frequency signal
 % pow_alpha - power ratio in the band of interest
 % pow_lf - power ratio in the low-frequency band
@@ -36,9 +36,11 @@ X_passband = [];
 X_low = [];
 pow_alpha = [];
 pow_lf = [];
+
 % filter settings for low-frequency signal
 lowfreq = 3;
 [b_low, a_low] = butter(4, lowfreq / (fs/2), 'low');
+
 % loop over components
 for ci=1:numcomp
     % find peak frequency
@@ -55,11 +57,11 @@ for ci=1:numcomp
         alpha_pk_comp = alpha_pk;
     end
     
-    % settings for alpha band
+    % filter settings for alpha band
     adj_band = [alpha_pk_comp-2 alpha_pk_comp+2];
     [b10, a10] = butter(2,adj_band/(fs/2));
     
-    % filter in low-frequency band and in the alpha band
+    % filter in the low-frequency band and in the alpha band
     X_ssd_pad = [X_ssd(padwin:-1:1,ci);X_ssd(:,ci);X_ssd(end:-1:end-padwin+1,ci)];
     X_passband(:,ci) = filtfilt(b10, a10, X_ssd_pad);    
     X_low(:,ci) = filtfilt(b_low, a_low, X_ssd_pad);
@@ -71,6 +73,7 @@ for ci=1:numcomp
     pow_lf(ci) = power_ratio(sp,f,[0.1, 3],[0.1,7]);
     
 end
+
 % cut zero padding
 X_passband = X_passband(padwin+1:end-padwin,:);
 X_low = X_low(padwin+1:end-padwin,:);
@@ -81,4 +84,3 @@ X_ampl = abs(X_hilbert);
 
 % compute bsi
 [bsi,~,~] = compute_bsi(X_ampl, X_low);
-
