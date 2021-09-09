@@ -67,8 +67,7 @@ for ci=1:numcomp
     X_low(:,ci) = filtfilt(b_low, a_low, X_ssd_pad);
     
     % find power ratio in alpha
-    pow_alpha(ci) = power_ratio(sp,f,[alpha_pk_comp-1, alpha_pk_comp+1],...
-        [alpha_pk_comp-3, alpha_pk_comp-2  alpha_pk_comp+2, alpha_pk_comp+3]);
+    pow_alpha(ci) = power_ratio(sp,f,[alpha_pk_comp-1, alpha_pk_comp+1],[alpha_pk_comp-3, alpha_pk_comp-2  alpha_pk_comp+2, alpha_pk_comp+3]);
     % find power ratio in low-frequency
     pow_lf(ci) = power_ratio(sp,f,[0.1, 3],[0.1,7]);
     
