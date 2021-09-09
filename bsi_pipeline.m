@@ -2,7 +2,7 @@ function [bsi, pow_alpha, pow_lf] = bsi_pipeline(X, alpha_pk, fs, numcomp)
 
 % Pipeline
 
-% This function is a pipeline for BSI computation.
+% This function is a pipeline for BSI computation
 
 % For the operation, 4 other functions are needed:
 % ssd - from BBCI Toolbox
