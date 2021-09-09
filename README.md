@@ -5,7 +5,7 @@ Functions for computation of Baseline-shift index (BSI)
 
 *ssd_extended* - Spatio-Spectral Decomposition with additional processing
 
-*power_ratio* - takes in power spectral density and signal and noise band edges and computed power ratio
+*power_ratio* - takes in power spectral density, signal and noise band edges, computes power ratio
 
 *compute_bsi* - computes BSI from amplitude envelope of oscillatory activity and corresponding low-frequency signal (baseline shifts)
 
