@@ -1,5 +1,5 @@
 # bsi_matlab
-Functions for computation of Baseline shift Index (BSI)
+Functions for computation of Baseline-shift Index (BSI)
 
 *bsi_pipeline* - is a pipeline for BSI computation
 
@@ -7,7 +7,7 @@ Functions for computation of Baseline shift Index (BSI)
 
 *power_ratio* - takes in power spectral density and signal and noise band edges and computed power ratio
 
-*compute_bsi* - computes baseline-shift index from amplitude envelope of oscillatory activity and corresponding low-frequency signal (baseline shifts)
+*compute_bsi* - computes BSI from amplitude envelope of oscillatory activity and corresponding low-frequency signal (baseline shifts)
 
 The method for computing BSI is adapted from 
 
