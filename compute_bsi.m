@@ -60,8 +60,7 @@ for ci=1:nch
     for bi=1:nbins
         Valpha(bi,ci) = mean(X_ampl(binned_idx(:,ci) == bi,ci));
         Vbs(bi,ci) = mean(X_low(binned_idx(:,ci) == bi,ci));
-    end
-    
+    end    
     % calculate bsi
     % compute linear regression
     bsi_tmp = [ones(nbins,1) Valpha(:,ci)]\Vbs(:,ci);
