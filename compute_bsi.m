@@ -53,8 +53,7 @@ for ci=1:nch
     % bin data
     binborders = prctile(sort(X_ampl(:,ci))',0:5:100,2);
     for ai=1:nbins
-        binned_idx(:,ci) = binned_idx(:,ci)...
-            + ai*(X_ampl(:,ci)>=binborders(ai) & X_ampl(:,ci)<=binborders(ai+1));
+        binned_idx(:,ci) = binned_idx(:,ci) + ai*(X_ampl(:,ci)>=binborders(ai) & X_ampl(:,ci)<=binborders(ai+1));
     end
     
     % fill arrays with mean values from the bins
