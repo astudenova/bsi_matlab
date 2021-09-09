@@ -10,10 +10,10 @@ function [bsi, Valpha, Vbs] = compute_bsi(X_ampl, X_low)
 
 % Inputs:
 % X_ampl - amplitude envelope of oscillatory signal - a signal that is
-% obtained with the Hilbert transform of narrow-band filtered oscillations. Can
-% be a matrix timepoints x channels.
-% X_low - baseline shifts - a narrow-band signal in the lower frequency range.
-% Can be a matrix timepoints x channels.
+% obtained with the Hilbert transform of narrow-band filtered oscillations, can
+% be a matrix timepoints x channels
+% X_low - baseline shifts - a narrow-band signal in the lower frequency range, can 
+% be a matrix timepoints x channels
 % Dimensions of X_ampl and X_low should be the same.
 
 % Outputs:
