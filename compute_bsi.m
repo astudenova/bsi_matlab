@@ -30,12 +30,12 @@ function [bsi, Valpha, Vbs] = compute_bsi(X_ampl, X_low)
 % Nikulin, V. V., Linkenkaer-Hansen, K., Nolte, G., & Curio, G. (2010). 
 % Non-zero mean and asymmetry of neuronal oscillations have different 
 % implications for evoked responses. Clinical Neurophysiology, 121(2), 
-% 186–193. 
+% 186â€“193. 
 % https://doi.org/10.1016/j.clinph.2009.09.028
 % Nikulin, V. V., Linkenkaer-Hansen, K., Nolte, G., Lemm, S., M?ller, K. R., 
 % Ilmoniemi, R. J., & Curio, G. (2007). A novel mechanism for evoked 
 % responses in the human brain. European Journal of Neuroscience, 25(10), 
-% 3146–3154. 
+% 3146â€“3154. 
 % https://doi.org/10.1111/j.1460-9568.2007.05553.x
 
 nbins = 20;
@@ -44,9 +44,10 @@ nch = size(X_ampl,2);
 bsi = zeros(nch,1);
 % vector or matrix of indices that are used for binning 
 binned_idx = zeros(size(X_ampl));
+% vector or matrix of binned amplitudes
 [Valpha, Vbs] = deal(zeros(nbins,nch));
 
-% if X_ampl is a matrix, loop over
+% if X_ampl is a matrix, loop over channels
 for ci=1:nch
     
     % bin data
