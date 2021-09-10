@@ -62,7 +62,8 @@ for ci=1:numcomp
     [b10, a10] = butter(2,adj_band/(fs/2));
     
     % filter in the low-frequency band and in the alpha band
-    X_ssd_pad = [X_ssd(padwin:-1:1,ci);X_ssd(:,ci);X_ssd(end:-1:end-padwin+1,ci)];
+    X_ssd_pad = [X_ssd(padwin:-1:1,ci);X_ssd(:,ci);
+    X_ssd(end:-1:end-padwin+1,ci)];
     X_passband(:,ci) = filtfilt(b10, a10, X_ssd_pad);
     X_low(:,ci) = filtfilt(b_low, a_low, X_ssd_pad);
     
@@ -74,7 +75,9 @@ for ci=1:numcomp
 end
 
 % cut zero padding
-X_passband = X_passband(padwin+1:end-padwin,:);X_low = X_low(padwin+1:end-padwin,:);
+X_passband = X_passband(padwin+1:end-padwin,:);
+X_low = X_low(padwin+1:end-padwin,:);
+
 % extract amplitude with the Hilbert transform
 X_hilbert = hilbert(X_passband);
 X_ampl = abs(X_hilbert);
